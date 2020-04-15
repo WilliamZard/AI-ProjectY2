@@ -49,18 +49,18 @@
                 
     )
 
-    ;(:durative-action rest
-    ;    :parameters(?p - person)
-    ;    :duration(= ?duration 30)
-    ;    :condition (and (at start (< (+ (current-time ?p) 30) (time-limit ?p)))
-    ;                    (at start (< (stamina-level ?p) (stamina-ceiling ?p)))
-    ;                    (at start (> (- (calorie-ratio ?p) (rest-loss ?p)) (calorie-ratio-floor ?p))))
-    ;    :effect (and 
-    ;                (at end(increase (stamina-level ?p) (rest-gain ?p)))
-    ;                (at end(decrease (calorie-ratio ?p) (rest-loss ?p)))
-    ;                (at end(increase (current-time ?p) 30)))       
+    (:durative-action rest
+       :parameters(?p - person)
+       :duration(= ?duration 30)
+        :condition (and (at start (< (+ (current-time ?p) 30) (time-limit ?p)))
+                        (at start (< (stamina-level ?p) (stamina-ceiling ?p)))
+                        (at start (> (- (calorie-ratio ?p) (rest-loss ?p)) (calorie-ratio-floor ?p))))
+        :effect (and 
+                    (at end(increase (stamina-level ?p) (rest-gain ?p)))
+                    (at end(decrease (calorie-ratio ?p) (rest-loss ?p)))
+                    (at end(increase (current-time ?p) 30)))       
             
-    ;)
+    )
 
     ;(:action move
         ;:parameters (?p - person ?from ?to - station)

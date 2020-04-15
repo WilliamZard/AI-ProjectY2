@@ -14,8 +14,8 @@
         (=(injury-risk benchPress1) 10)
         (=(activity-calories benchPress1) 10) 
         (=(calorie-ratio user) 2)
-        ;(=(rest-gain user) 10)
-        ;(=(rest-loss user) 0.2)
+        (=(rest-gain user) 10)
+        (=(rest-loss user) 0.2)
         (=(time-limit user) 300)
         (=(current-time user) 0)
         (=(calory-goal user) 200)
@@ -23,12 +23,12 @@
         (=(calorie-ratio-floor user) 1)
 )
 
-(:goal (and (> (injury-threshold user) (injury-level user))
+(:goal (and (< (injury-level user) (injury-threshold user))
             (<= (current-time user) (time-limit user))
             (>= (calories-burnt user) (calory-goal user)))
 )
 
 ;un-comment the following line if metric is needed
-(:metric minimize (injury-level user))
+(:metric minimize (injury-threshold user))
 
 )
