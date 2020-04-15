@@ -6,6 +6,7 @@
         :durative-actions
         :duration-inequalities
         :equality
+        :negative-preconditions
     )
     
     (:types 
@@ -20,13 +21,13 @@
                  (calorie-goal-reached ?p -person))
 
     (:functions (stamina-level ?p - person)
-                (stamina-required ?a - action)
+                (stamina-required ?s - station)
                 (calories-burnt ?p - person) 
                 (calory-goal ?p - person) 
                 (injury-level ?p - person)
                 (injury-threshold ?p - person)
-                (injury-risk ?a -action)
-                (activity-calories ?a - action)
+                (injury-risk ?s -action)
+                (activity-calories ?s - action)
                 (calorie-ratio ?p)
                 (rest-gain ?p)
                 (rest-loss ?p)
@@ -41,9 +42,9 @@
                         (at start (in-time-frame ?p))
                         (at start (not (fatigued ?p)))
                         (over all (at ?p ?s)))
-        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?a))) 
-                (at end (increase (calories-burnt ?p) (scale-up (activity-calories ?a) (calorie-ratio ?p))))
-                (at end (increase (injury-level ?p) (injury-risk ?a)))
+        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
+                (at end (increase (calories-burnt ?p) (scale-up (activity-calories ?s) (calorie-ratio ?p))))
+                (at end (increase (injury-level ?p) (injury-risk ?s)))
                 (at end (increase (current-time ?p)(5)))
                 (at end (when(<=((stamina-level ?p)(0))) 
                                 (fatigued ?p)))
