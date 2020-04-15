@@ -6,7 +6,7 @@
 
 (:init
         (at user benchpress)
-        (=(stamina-level user) 100)
+        (=(stamina-level user) 0)
         (=(stamina-required benchPress) 5)
         (=(calories-burnt user) 0)
         (=(injury-level user) 0)
