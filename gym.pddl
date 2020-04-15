@@ -62,10 +62,10 @@
             
     ;)
 
-    (:action move
-        :parameters (?p - person ?from ?to - station)
-        :precondition (and (at ?p ?from))
-        :effect (and (not (at ?p ?from)) (at ?p ?to))
-    )
+    ;(:action move
+        ;:parameters (?p - person ?from ?to - station)
+        ;:precondition (and (at ?p ?from))
+        ;:effect (and (not (at ?p ?from)) (at ?p ?to))
+    ;)
     
 )
