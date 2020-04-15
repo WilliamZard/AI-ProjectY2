@@ -14,11 +14,8 @@
             person - person)
 
 
-    (:predicates (at ?p - person ?s - station) 
-                 (injured ?p - person)
-                 (fatigued ?p - person)
-                 (in-time-frame ?p -person)
-                 (calorie-goal-reached ?p -person))
+    (:predicates 
+        (at ?p - person ?s - station))
 
     (:functions (stamina-level ?p - person)
                 (stamina-required ?s - station)
@@ -38,36 +35,25 @@
         :parameters (?p - person ?s - benchPress)
         :duration(= ?duration 1)
         :condition (and (at start(at ?p ?s)) 
-                        (at start (not(injured ?p)))
-                        (at start (in-time-frame ?p))
-                        (at start (not (fatigued ?p)))
+                        (at start (> (injury-level ?p) (injury-threshold ?p)))
+                        (at start (< (+ (current-time ?p) 5) (time-limit ?p)))
+                        (at start (> (stamina-level ?p) 0))
                         (over all (at ?p ?s)))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (* (activity-calories ?s) (calorie-ratio ?p))))
                 (at end (increase (injury-level ?p) (injury-risk ?s)))
-                (at end (increase (current-time ?p) 5))
-                (at end (when(<=((stamina-level ?p) 0)) (fatigued ?p)))
-                (at end(when(>=((injury-level ?p)(injury-threshold ?p)))
-                                (injured ?p)))
-                (at end (when(>(current-time ?p)(time-limit ?p))) 
-                                (not(in-time-frame ?p)))
-                (at end (when(=(calories-burnt ?p)(calory-goal ?p)))
-                                (calorie-goal-reached ?p)))
+                (at end (increase (current-time ?p) 5)))
                 
     )`
 
     (:durative-action rest
         :parameters(?p - person)
         :duration(= ?duration 30)
-        :condition (in-time-frame ?p)
+        :condition (at start (< (+ (current-time ?p) 30) (time-limit ?p)))
         :effect (and 
                     (at end(increase (stamina-level ?p) (rest-gain ?p)))
                     (at end(decrease (calorie-ratio ?p) (rest-loss ?p)))
-                    (at end(increase (current-time ?p) 30))
-                    (at end (when(>(current-time ?p)(time-limit ?p))) 
-                                (not(in-time-frame ?p)))
-                    (at end (when(>(stamina-level ?p) 0)
-                                (not(fatigued ?p)))))          
+                    (at end(increase (current-time ?p) 30)))       
             
     )
 

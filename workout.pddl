@@ -5,10 +5,6 @@
 )
 
 (:init
-        (not(injured user))
-        (not(fatigued user))
-        (in-time-frame user)
-        (not(calorie-goal-reached user))
         (=(stamina-level user) 100)
         (=(stamina-required benchPress) 5)
         (=(stamina-required squat) 7)
@@ -27,10 +23,10 @@
         (=(calory-goal user) 200)
 )
 
-(:goal (and (not(injured user))
-            (not(fatigued user))
-            (in-time-frame user)
-            (calories-goal-reached user))
+(:goal (and (> (injury-level user) (injury-threshold user))
+            (> (stamina-level user) 0)
+            (<= (current-time user) (time-limit user))
+            (>= (calories-burnt user) (calory-goal user))
 )
 
 ;un-comment the following line if metric is needed
