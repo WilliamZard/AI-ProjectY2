@@ -12,7 +12,7 @@
         (=(injury-level user) 0)
         (=(injury-threshold user) 100)
         (=(injury-risk benchPress1) 10)
-        (=(activity-calories benchPress1) 200) 
+        (=(activity-calories benchPress1) 10) 
         (=(calorie-ratio user) 1)
         (=(rest-gain user) 10)
         (=(rest-loss user) 0.2)
@@ -21,9 +21,9 @@
         (=(calory-goal user) 200)
 )
 
-(:goal ;(and (< (injury-level user) (injury-threshold user))
-            ;(> (stamina-level user) 0)
-            ;(<= (current-time user) (time-limit user))
+(:goal (and (< (injury-level user) (injury-threshold user))
+            (> (stamina-level user) 0)
+            (<= (current-time user) (time-limit user))
             (>= (calories-burnt user) (calory-goal user))
 )
 
