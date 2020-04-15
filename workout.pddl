@@ -8,7 +8,7 @@
         (at user benchpress)
         (=(stamina-level user) 100)
         (=(stamina-required benchPress) 5)
-        (=(calories-burnt user) 200)
+        (=(calories-burnt user) 0)
         (=(injury-level user) 0)
         (=(injury-threshold user) 100)
         (=(injury-risk benchPress) 10)
