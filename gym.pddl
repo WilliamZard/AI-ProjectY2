@@ -11,7 +11,7 @@
     
     (:types
         person - object
-        benchPress squat - station
+        benchPress - station
         )
 
 
