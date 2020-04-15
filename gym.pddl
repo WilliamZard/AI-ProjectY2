@@ -36,7 +36,7 @@
         :parameters (?p - person ?s - benchPress)
         :duration(= ?duration 1)
         :condition (and (at start(at ?p ?s)) 
-                        (at start (> (injury-level ?p) (injury-threshold ?p)))
+                        (at start (< (injury-level ?p) (injury-threshold ?p)))
                         (at start (< (+ (current-time ?p) 5) (time-limit ?p)))
                         (at start (> (stamina-level ?p) 0))
                         (over all (at ?p ?s)))
