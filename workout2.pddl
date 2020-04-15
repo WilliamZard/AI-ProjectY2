@@ -18,7 +18,7 @@
         (=(rest-loss user) 0.2)
         (=(time-limit user) 300)
         (=(current-time user) 0)
-        (=(calory-goal user) 200)
+        (=(calory-goal user) 210)
         (=(stamina-ceiling user) 100)
         (=(calorie-ratio-floor user) 1)
 )
