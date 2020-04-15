@@ -23,12 +23,12 @@
         (=(calorie-ratio-floor user) 1)
 )
 
-(:goal (and (< (injury-level user) (injury-threshold user))
+(:goal (and (> (injury-threshold user) (injury-level user))
             (<= (current-time user) (time-limit user))
             (>= (calories-burnt user) (calory-goal user)))
 )
 
 ;un-comment the following line if metric is needed
-(:metric minimize (injury-threshold user))
+(:metric minimize (injury-level user))
 
 )
