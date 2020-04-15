@@ -9,9 +9,10 @@
         :negative-preconditions
     )
     
-    (:types 
-        user - person
-        benchPress squat - station)
+    (:types
+        station - object
+        benchPress squat - station
+        person)
 
 
     (:predicates 
@@ -32,7 +33,7 @@
                 (current-time ?p))
 
     (:durative-action useBenchPress
-        :parameters (?p - user ?s - benchPress)
+        :parameters (?p - person ?s - benchPress)
         :duration(= ?duration 1)
         :condition (and (at start(at ?p ?s)) 
                         (at start (> (injury-level ?p) (injury-threshold ?p)))
