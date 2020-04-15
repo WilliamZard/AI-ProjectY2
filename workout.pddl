@@ -11,7 +11,7 @@
         (=(injury-level user) 0)
         (=(injury-threshold user) 100)
         (=(injury-risk benchPress) 10)
-        (=(activity-calories benchPress) 10) 
+        (=(activity-calories benchPress) 200) 
         (=(calorie-ratio user) 1)
         (=(rest-gain user) 10)
         (=(rest-loss user) 0.2)
