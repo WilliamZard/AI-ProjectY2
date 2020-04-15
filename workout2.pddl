@@ -29,5 +29,5 @@
 )
 
 ;un-comment the following line if metric is needed
-;(:metric minimize (???))
+(:metric minimize (injury-level user))
 )
