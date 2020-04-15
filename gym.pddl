@@ -10,9 +10,9 @@
     )
     
     (:types
-        station - object
+        person - object
         benchPress squat - station
-        person)
+        )
 
 
     (:predicates 
@@ -26,11 +26,11 @@
                 (injury-threshold ?p - person)
                 (injury-risk ?s - station)
                 (activity-calories ?s - station)
-                (calorie-ratio ?p)
-                (rest-gain ?p)
-                (rest-loss ?p)
-                (time-limit ?p)
-                (current-time ?p))
+                (calorie-ratio ?p - person)
+                (rest-gain ?p - person)
+                (rest-loss ?p - person)
+                (time-limit ?p - person)
+                (current-time ?p - person))
 
     (:durative-action useBenchPress
         :parameters (?p - person ?s - benchPress)
