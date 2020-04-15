@@ -11,7 +11,7 @@
     
     (:types 
             benchPress squat - station
-            person - person)
+            person)
 
 
     (:predicates 
