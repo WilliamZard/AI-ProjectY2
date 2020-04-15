@@ -19,8 +19,8 @@
         (=(time-limit user) 216000)
         (=(current-time user) 0)
         (=(calory-goal user) 200)
-        (=(stamina-ceiling) 100)
-        (=(calorie-ratio-floor) 1)
+        (=(stamina-ceiling user) 100)
+        (=(calorie-ratio-floor user) 1)
 )
 
 (:goal (and (< (injury-level user) (injury-threshold user))
