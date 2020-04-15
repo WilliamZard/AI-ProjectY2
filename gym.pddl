@@ -11,7 +11,7 @@
     
     (:types 
             benchPress squat - station
-            person)
+            user - person)
 
 
     (:predicates 
@@ -23,8 +23,8 @@
                 (calory-goal ?p - person) 
                 (injury-level ?p - person)
                 (injury-threshold ?p - person)
-                (injury-risk ?s -action)
-                (activity-calories ?s - action)
+                (injury-risk ?s - station)
+                (activity-calories ?s - station)
                 (calorie-ratio ?p)
                 (rest-gain ?p)
                 (rest-loss ?p)
@@ -32,7 +32,7 @@
                 (current-time ?p))
 
     (:durative-action useBenchPress
-        :parameters (?p - person ?s - benchPress)
+        :parameters (?p - user ?s - benchPress)
         :duration(= ?duration 1)
         :condition (and (at start(at ?p ?s)) 
                         (at start (> (injury-level ?p) (injury-threshold ?p)))
