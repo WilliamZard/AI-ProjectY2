@@ -1,8 +1,8 @@
 (define (problem problem2) (:domain testDomain)
 (:objects 
         user - person 
-        benchPress1 - benchPress
-        squat1 - squat
+        benchPress1 - station
+        squat1 - station
 )
 
 (:init

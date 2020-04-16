@@ -10,8 +10,7 @@
     )
     
     (:types
-        person - object
-        benchPress squat - station
+        person station - object
         )
 
 
@@ -35,7 +34,7 @@
                 (calorie-ratio-floor ?p - person))
 
     (:durative-action useBenchPress
-        :parameters (?p - person ?s - benchPress)
+        :parameters (?p - person ?s - station)
         :duration(= ?duration 1)
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
@@ -49,7 +48,7 @@
     )
 
     (:durative-action useSquat
-        :parameters (?p - person ?s - squat)
+        :parameters (?p - person ?s - station)
         :duration(= ?duration 2)
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
