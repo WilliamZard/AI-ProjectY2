@@ -14,9 +14,9 @@
         )
 
 
-    ;(:predicates 
-        ;(at ?p - person ?s - station)
-    ;)
+    (:predicates 
+        (at ?p - person ?s - station)
+    )
 
     (:functions (stamina-level ?p - person)
                 (stamina-required ?s - station)
@@ -38,8 +38,10 @@
         :parameters (?p - person ?s - station)
         :duration(= ?duration 1)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
                         (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
                         (over all (> (stamina-level ?p) (stamina-required ?s))))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
@@ -50,8 +52,10 @@
         :parameters (?p - person ?s - station)
         :duration(= ?duration 2)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
                         (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
                         (over all (> (stamina-level ?p) (stamina-required ?s))))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
