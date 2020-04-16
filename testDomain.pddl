@@ -18,6 +18,8 @@
     (:predicates 
         (at ?p - person ?s - station)
         (can-move ?p - person ?s1 ?s2 - station)
+        (is-Station ?s - station)
+        (is-Person ?p - person)
     )
 
     (:functions (stamina-level ?p - person)
@@ -79,15 +81,18 @@
     )
 
     (:durative-action move
-        :parameters (?p - person ?from ?to - station)
+        :parameters (?p - person ?from - station ?to - station)
         :duration (= ?duration 1)
             :condition (and
+                        (at start (is-Person ?p))
+                        (at start (is-Station ?from))
+                        (at start (is-Station ?to))
                         (over all (can-move ?p ?from ?to)) 
-                        (at start (at ?p ?from)) 
-                        (at start (not (at ?p ?to))))
+                        (at start (at ?p ?from)))
+                        
             :effect (and 
-                        (at start (not (at ?p ?from)))
-                        (at end (at ?p ?to)))
+                        (at end (at ?p ?to))
+                        (at start (not (at ?p ?from))))                       
     )
 
     ;(:durative-action rest
