@@ -14,8 +14,9 @@
         )
 
 
-    (:predicates 
-        (at ?p - person ?s - station))
+    ;(:predicates 
+        ;(at ?p - person ?s - station)
+    ;)
 
     (:functions (stamina-level ?p - person)
                 (stamina-required ?s - station)
@@ -36,11 +37,9 @@
     (:durative-action useBenchPress
         :parameters (?p - person ?s - station)
         :duration(= ?duration 1)
-        :condition (and (at start(at ?p ?s)) 
-                        (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+        :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
                         (at end (> (stamina-level ?p) 0))
-                        (over all (at ?p ?s))
                         (over all (> (stamina-level ?p) (stamina-required ?s))))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
@@ -50,11 +49,9 @@
     (:durative-action useSquat
         :parameters (?p - person ?s - station)
         :duration(= ?duration 2)
-        :condition (and (at start(at ?p ?s)) 
-                        (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+        :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
                         (at end (> (stamina-level ?p) 0))
-                        (over all (at ?p ?s))
                         (over all (> (stamina-level ?p) (stamina-required ?s))))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
