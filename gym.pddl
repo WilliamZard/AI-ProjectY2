@@ -36,7 +36,7 @@
 
     (:durative-action useBenchPress
         :parameters (?p - person ?s - benchPress)
-        :duration(= ?duration 1)
+        :duration(= ?duration 30)
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (< (+ (current-time ?p) 5) (time-limit ?p)))
