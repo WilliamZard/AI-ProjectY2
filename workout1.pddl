@@ -11,7 +11,7 @@
         (=(calories-burnt user) 0)
         (=(injury-level user) 0)
         (=(injury-threshold user) 101)
-        (=(injury-risk benchPress1) 50)
+        (=(injury-risk benchPress1) 5)
         (=(activity-calories benchPress1) 10)
         (=(calorie-ratio user) 1.5)
         (=(time-limit user) 216000)
