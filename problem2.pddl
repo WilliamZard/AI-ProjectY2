@@ -9,6 +9,10 @@
         (at user squat1)
         (can-move user benchPress1 squat1)
         (can-move user squat1 benchPress1)
+        (is-Station benchPress1)
+        (is-Station squat1)
+        (is-Person user)
+        
         (=(stamina-level user) 101)
 
         (=(stamina-required benchPress1) 30)
