@@ -2,17 +2,24 @@
 (:objects 
         user - person 
         benchPress1 - benchPress
+        squat1 - squat
 )
 
 (:init
         (at user benchpress1)
         (=(stamina-level user) 101)
+
         (=(stamina-required benchPress1) 30)
+        (=(injury-risk benchPress1) 5)
+        (=(activity-calories benchPress1) 10)
+
+        (=(stamina-required squat1) 40)
+        (=(injury-risk squat1) 10)
+        (=(activity-calories squat1) 15)
+
         (=(calories-burnt user) 0)
         (=(injury-level user) 0)
         (=(injury-threshold user) 101)
-        (=(injury-risk benchPress1) 5)
-        (=(activity-calories benchPress1) 10)
         (=(calorie-ratio user) 1.5)
         ;(=(time-limit user) 216000)
         ;(=(current-time user) 0)
