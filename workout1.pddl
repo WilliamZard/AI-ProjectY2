@@ -22,7 +22,7 @@
         ;(=(calorie-ratio-floor user) 1)
 )
 
-(:goal  (= (calories-burnt user) (calory-goal user))
+(:goal  (and (>= (calories-burnt user) (calory-goal user)) (> (stamina-level user) 0))
 )
 
 ;un-comment the following line if metric is needed
