@@ -6,8 +6,8 @@
 
 (:init
         (at user benchpress1)
-        (=(stamina-level user) 100)
-        (=(stamina-required benchPress1) 5)
+        (=(stamina-level user) 101)
+        (=(stamina-required benchPress1) 50)
         (=(calories-burnt user) 0)
         ;(=(injury-level user) 0)
         ;(=(injury-threshold user) 100)
@@ -16,6 +16,7 @@
         ;(=(calorie-ratio user) 2)
         ;(=(time-limit user) 216000)
         ;(=(current-time user) 0)
+        (=(rest-gain user) 50)
         (=(calory-goal user) 20)
         ;(=(stamina-ceiling user) 100)
         ;(=(calorie-ratio-floor user) 1)

@@ -25,9 +25,9 @@
                 ;(injury-level ?p - person)
                 ;(injury-threshold ?p - person)
                ; (injury-risk ?s - station)
-                (activity-calories ?s - station))
+                (activity-calories ?s - station)
                 ;(calorie-ratio ?p - person)
-                ;(rest-gain ?p - person)
+                (rest-gain ?p - person))
                 ;(rest-loss ?p - person)
                 ;(time-limit ?p - person)
                 ;(current-time ?p - person)
@@ -67,13 +67,13 @@
         ;:precondition (and (at ?p ?from))
         ;:effect (and (not (at ?p ?from)) (at ?p ?to))
     ;)
-    ;(:durative-action rest
-        ;:parameters (?p - person)
-       ; :duration (= ?duration 30)
+    (:durative-action rest
+        :parameters (?p - person)
+        :duration (= ?duration 30)
         ;:condition (at start (< (+ (current-time ?p) 30) (time-limit ?p)))
-        ;:effect (at end(increase (stamina-level ?p) (rest-gain ?p)))
+        :effect (at end(increase (stamina-level ?p) (rest-gain ?p)))
         
-   ;)
+   )
 
    ; (:durative-action recover
       ;  :parameters (?p - person)
