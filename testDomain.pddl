@@ -34,19 +34,19 @@
                 (stamina-ceiling ?p - person)
                 (calorie-ratio-floor ?p - person))
 
-    ;(:durative-action useBenchPress
-        ;:parameters (?p - person ?s - benchPress)
-        ;:duration(= ?duration 1)
-        ;:condition (and (at start(at ?p ?s)) 
-                        ;(at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
-                        ;(at start (> (stamina-level ?p) (stamina-required ?s)))
-                        ;(at end (> (stamina-level ?p) 0))
-                        ;(over all (at ?p ?s))
-                        ;(over all (> (stamina-level ?p) (stamina-required ?s))))
-        ;:effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
-                ;(at end (increase (calories-burnt ?p) (activity-calories ?s))) 
-                ;(at end (increase (injury-level ?p) (injury-risk ?s))))
-    ;)
+    (:durative-action useBenchPress
+        :parameters (?p - person ?s - benchPress)
+        :duration(= ?duration 1)
+        :condition (and (at start(at ?p ?s)) 
+                        (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (> (stamina-level ?p) (stamina-required ?s)))
+                        (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
+                        (over all (> (stamina-level ?p) (stamina-required ?s))))
+        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
+                (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
+                (at end (increase (injury-level ?p) (injury-risk ?s))))
+    )
 
     (:durative-action useSquat
         :parameters (?p - person ?s - squat)
