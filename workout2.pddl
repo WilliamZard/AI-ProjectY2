@@ -15,7 +15,7 @@
         (=(activity-calories benchPress1) 10) 
         (=(calorie-ratio user) 2)
         (=(rest-gain user) 10)
-        (=(rest-loss user) 0.5)
+        (=(rest-loss user) 0.2)
         (=(time-limit user) 300)
         (=(current-time user) 0)
         (=(calory-goal user) 210)
