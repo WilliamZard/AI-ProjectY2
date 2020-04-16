@@ -2,20 +2,20 @@
 (:objects 
         user - person 
         benchPress1 - station
-        squat1 - station
+        ;squat1 - station
 )
 
 (:init
-        (at user squat1)
+        (at user benchPress1)
         (=(stamina-level user) 101)
 
         (=(stamina-required benchPress1) 30)
         (=(injury-risk benchPress1) 5)
         (=(activity-calories benchPress1) 10)
 
-        (=(stamina-required squat1) 40)
-        (=(injury-risk squat1) 10)
-        (=(activity-calories squat1) 15)
+        ;(=(stamina-required squat1) 40)
+        ;(=(injury-risk squat1) 10)
+        ;(=(activity-calories squat1) 15)
 
         (=(calories-burnt user) 0)
         (=(injury-level user) 0)
