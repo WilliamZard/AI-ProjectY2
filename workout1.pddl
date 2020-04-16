@@ -9,9 +9,9 @@
         (=(stamina-level user) 101)
         (=(stamina-required benchPress1) 50)
         (=(calories-burnt user) 0)
-        ;(=(injury-level user) 0)
-        ;(=(injury-threshold user) 100)
-        ;(=(injury-risk benchPress1) 10)
+        (=(injury-level user) 0)
+        (=(injury-threshold user) 101)
+        (=(injury-risk benchPress1) 50)
         (=(activity-calories benchPress1) 10) 
         ;(=(calorie-ratio user) 2)
         ;(=(time-limit user) 216000)
@@ -22,7 +22,9 @@
         ;(=(calorie-ratio-floor user) 1)
 )
 
-(:goal  (and (>= (calories-burnt user) (calory-goal user)) (> (stamina-level user) 0))
+(:goal  (and (>= (calories-burnt user) (calory-goal user)) 
+             (> (stamina-level user) 0)
+             (< (injury-level user)(injury-threshold user)))
 )
 
 ;un-comment the following line if metric is needed
