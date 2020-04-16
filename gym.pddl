@@ -43,7 +43,7 @@
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
                         (at end (> (stamina-level ?p) 0))
                         (over all (at ?p ?s))
-                        (over all (> (stamina-level ?p) 0)))
+                        (over all (> (stamina-level ?p) (stamina-required ?s))))
                         ;(over all (> (injury-level ?p) 0)))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
