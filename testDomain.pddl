@@ -77,10 +77,15 @@
             
     )
 
-    (:action move
+    (:durative-action move
         :parameters (?p - person ?from ?to - station)
-        :precondition (and (at ?p ?from) (not (at ?p ?to)))
-        :effect (and (not (at ?p ?from)) (at ?p ?to))
+        :duration (= ?duration 1)
+            :condition (and 
+                        (at start (at ?p ?from)) 
+                        (at start (not (at ?p ?to))))
+            :effect (and 
+                        (at end (not (at ?p ?from)))
+                        (at end (at ?p ?to)))
     )
 
     ;(:durative-action rest
