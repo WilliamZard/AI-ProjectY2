@@ -52,7 +52,7 @@
     )
 
     (:durative-action useSquat
-        :parameters (?p - person ?s - benchPress)
+        :parameters (?p - person ?s - squat)
         :duration(= ?duration 2)
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
