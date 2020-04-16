@@ -1,7 +1,7 @@
 (define (problem problem2) (:domain testDomain)
 (:objects 
         user - person 
-        benchPress1 - benchPress
+        ;benchPress1 - benchPress
         squat1 - squat
 )
 
@@ -9,9 +9,9 @@
         (at user squat1)
         (=(stamina-level user) 101)
 
-        (=(stamina-required benchPress1) 30)
-        (=(injury-risk benchPress1) 5)
-        (=(activity-calories benchPress1) 10)
+        ;(=(stamina-required benchPress1) 30)
+        ;(=(injury-risk benchPress1) 5)
+        ;(=(activity-calories benchPress1) 10)
 
         (=(stamina-required squat1) 40)
         (=(injury-risk squat1) 10)
