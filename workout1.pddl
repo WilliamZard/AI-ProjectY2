@@ -17,7 +17,7 @@
         ;(=(time-limit user) 216000)
         ;(=(current-time user) 0)
         (=(rest-gain user) 50)
-        (=(calory-goal user) 30)
+        (=(calory-goal user) 50)
         ;(=(stamina-ceiling user) 100)
         ;(=(calorie-ratio-floor user) 1)
 )
