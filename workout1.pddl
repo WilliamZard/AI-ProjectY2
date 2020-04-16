@@ -25,9 +25,8 @@
 (:goal  (and (>= (calories-burnt user) (calory-goal user)) 
              (> (stamina-level user) 0)
              (< (injury-level user)(injury-threshold user))
-             (< (current-time user)(time-limit user))
+             (< (current-time user)(time-limit user)))
 )
-
 ;un-comment the following line if metric is needed
 ;(:metric minimize (???))
 )

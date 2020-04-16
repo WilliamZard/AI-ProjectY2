@@ -44,7 +44,7 @@
                         (over all (at ?p ?s)))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
-                (at end (increase (injury-level ?p) (injury-risk ?s))))
+                (at end (increase (injury-level ?p) (injury-risk ?s)))
                 (at end (increase (current-time ?p) 5)))
                 
     )
