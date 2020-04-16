@@ -12,7 +12,7 @@
     (:types
         person - object
         benchPress - station
-        )
+    )
 
 
     (:predicates 
