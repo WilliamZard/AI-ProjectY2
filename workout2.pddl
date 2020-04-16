@@ -1,4 +1,4 @@
-(define (problem workout) (:domain gym)
+(define (problem workout2) (:domain gym)
 (:objects 
         user - person 
         benchPress1 - benchPress
