@@ -23,9 +23,9 @@
         (=(calorie-ratio-floor user) 0.5)
 )
 
-(:goal  (and (>= (calories-burnt user) (calory-goal user)) 
-             (> (stamina-level user) 0)
-             (> (injury-threshold user) (injury-level user)))
+(:goal  (and (>= (calories-burnt user) (calory-goal user)) )
+             ;(> (stamina-level user) 0)
+             ;(> (injury-threshold user) (injury-level user)))
              ;(< (current-time user)(time-limit user)))
 )
 ;un-comment the following line if metric is needed
