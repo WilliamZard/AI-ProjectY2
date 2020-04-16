@@ -40,15 +40,15 @@
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (< (+ (current-time ?p) 5) (time-limit ?p)))
-                        (at start (> (- (stamina-level ?p) (stamina-required ?s)) 0))
+                        (at start (> (stamina-level ?p) (stamina-required ?s)))
+                        (at end (> (stamina-level ?p) 0))
                         (over all (at ?p ?s))
-                        (over all (> (stamina-level ?p) 0)))
-                        ;(over all (> (injury-level ?p) 0)))
+                        (over all (> (stamina-level ?p) 0))
+                        (over all (> (injury-level ?p) 0)))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
                 (at end (increase (injury-level ?p) (injury-risk ?s)))
                 (at end (increase (current-time ?p) 5)))
-                
     )
 
     (:durative-action rest
