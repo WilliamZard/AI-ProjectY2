@@ -1,4 +1,4 @@
-(define (problem workout1) (:domain gym)
+(define (problem workout1) (:domain gym1)
 (:objects 
         user - person 
         benchPress1 - benchPress
@@ -14,6 +14,8 @@
         (=(injury-risk benchPress1) 5)
         (=(activity-calories benchPress1) 10)
         (=(calorie-ratio user) 1.5)
+        ;(=(time-limit user) 216000)
+        ;(=(current-time user) 0)
         (=(rest-gain user) 50)
         (=(rest-loss user) 0.5)
         (=(calory-goal user) 50)

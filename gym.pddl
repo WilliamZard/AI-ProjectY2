@@ -55,8 +55,8 @@
        :parameters(?p - person)
        :duration(= ?duration 30)
         :condition (and ;(at start (< (+ (current-time ?p) 30) (time-limit ?p)))
-                        (over all  (< (+(stamina-level ?p)(rest-gain ?p)) (stamina-ceiling ?p)))
-                        (over all (>= (- (calorie-ratio ?p) (rest-loss ?p)) (calorie-ratio-floor ?p))))
+                        (at start (< (+(stamina-level ?p)(rest-gain ?p)) (stamina-ceiling ?p)))
+                        (at start (>= (- (calorie-ratio ?p) (rest-loss ?p)) (calorie-ratio-floor ?p))))
         :effect (and 
                     (at end(increase (stamina-level ?p) (rest-gain ?p)))
                     (at end(decrease (calorie-ratio ?p) (rest-loss ?p))))
