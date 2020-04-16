@@ -6,7 +6,7 @@
 )
 
 (:init
-        (at user benchpress1)
+        (at user squat1)
         (=(stamina-level user) 101)
 
         (=(stamina-required benchPress1) 30)
