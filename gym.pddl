@@ -40,7 +40,7 @@
         :condition (and (at start(at ?p ?s)) 
                         (at start (< (injury-level ?p) (injury-threshold ?p)))
                         (at start (< (+ (current-time ?p) 5) (time-limit ?p)))
-                        (at start (> (- (stamina-level ?p) (stamina-required ?s)) 0))
+                        (at start (> (stamina-level ?p) (stamina-required ?s))) 
                         (over all (at ?p ?s)))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (* (activity-calories ?s) (calorie-ratio ?p))))
