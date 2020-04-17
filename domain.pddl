@@ -54,7 +54,7 @@
 
     (:durative-action useSquat
         :parameters (?p - person ?s - squat)
-        :duration(= ?duration 5)
+        :duration(= ?duration 50)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
@@ -82,7 +82,7 @@
 
     (:durative-action useTreadmil
         :parameters (?p - person ?s - treadmill)
-        :duration(= ?duration 30)
+        :duration(= ?duration 300)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
@@ -96,7 +96,7 @@
 
     (:durative-action useLegPress
         :parameters (?p - person ?s - legPress)
-        :duration(= ?duration 5)
+        :duration(= ?duration 50)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))

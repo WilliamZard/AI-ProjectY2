@@ -6,6 +6,8 @@
 
 (:init
         (at user benchpress1)
+        (is-Person user)
+        (is-Station benchPress1)
         (=(stamina-level user) 101)
         (=(stamina-required benchPress1) 50)
         (=(calories-burnt user) 0)
