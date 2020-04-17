@@ -1,4 +1,4 @@
-(define (problem problem2) (:domain testDomain)
+(define (problem problem3) (:domain testDomain)
 (:objects 
         user - person 
         benchPress1 - benchPress
@@ -27,6 +27,8 @@
         (=(injury-level user) 0)
         (=(injury-threshold user) 101)
         (=(calorie-ratio user) 1.5)
+        ;(=(time-limit user) 216000)
+        ;(=(current-time user) 0)
         (=(rest-gain user) 50)
         (=(rest-loss user) 0.5)
         (=(calory-goal user) 60)
@@ -35,8 +37,11 @@
 )
 
 (:goal  (and (>= (calories-burnt user) (calory-goal user)))
+             ;(> (stamina-level user) 0)
+             ;(> (injury-threshold user) (injury-level user)))
+             ;(< (current-time user)(time-limit user)))
 )
-
+;un-comment the following line if metric is needed
 (:metric minimize (total-time))
 
 )
