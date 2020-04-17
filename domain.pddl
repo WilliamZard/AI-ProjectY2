@@ -49,7 +49,8 @@
                         (over all (> (stamina-level ?p) (stamina-required ?s))))
         :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
                 (at end (increase (calories-burnt ?p) (* (calorie-ratio ?p) (activity-calories ?s)))) 
-                (at end (increase (injury-level ?p) (injury-risk ?s))))
+                (at end (increase (injury-level ?p) (injury-risk ?s)))
+                (at start (decrease (stamina-level ?p) (stamina-required ?s))))
     )
 
     (:durative-action useSquat
