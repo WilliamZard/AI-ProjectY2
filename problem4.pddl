@@ -25,15 +25,15 @@
 
         (=(stamina-required treadmill1) 30)
         (=(injury-risk treadmill1) 5)
-        (=(activity-calories treadmill1) 60)
+        (=(activity-calories treadmill1) 35)
 
-        (=(stamina-required squat1) 25)
+        (=(stamina-required squat1) 20)
         (=(injury-risk squat1) 10)
-        (=(activity-calories squat1) 25)
+        (=(activity-calories squat1) 12)
 
-        (=(stamina-required legPress1) 20)
+        (=(stamina-required legPress1) 10)
         (=(injury-risk legPress1) 10)
-        (=(activity-calories legPress1) 15)
+        (=(activity-calories legPress1) 4)
 
         (=(calories-burnt user) 0)
         (=(injury-level user) 0)
