@@ -13,7 +13,7 @@
         (is-Station squat1)
         (is-Person user)
         
-        (=(stamina-level user) 101)
+        (=(stamina-level user) 100)
 
         (=(stamina-required benchPress1) 30)
         (=(injury-risk benchPress1) 5)
