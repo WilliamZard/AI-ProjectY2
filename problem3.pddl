@@ -7,7 +7,7 @@
 )
 
 (:init
-        (at user squat1)
+        (at user rowingMachine1)
 
         (can-move user benchPress1 squat1)
         (can-move user benchPress1 rowingMachine1)
