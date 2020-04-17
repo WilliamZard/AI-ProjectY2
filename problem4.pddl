@@ -49,7 +49,8 @@
 (:goal  (and (>= (calories-burnt user) (calory-goal user)))
 )
 
-(:metric minimize (total-time))
 (:metric minimize (calories-burnt user)) 
+(:metric minimize (total-time))
+
 
 )
