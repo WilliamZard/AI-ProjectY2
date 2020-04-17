@@ -23,7 +23,7 @@
         
         (=(stamina-level user) 100)
 
-        (=(stamina-required treadmill1) 40)
+        (=(stamina-required treadmill1) 30)
         (=(injury-risk treadmill1) 5)
         (=(activity-calories treadmill1) 60)
 
