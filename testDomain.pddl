@@ -68,7 +68,7 @@
 
     (:durative-action useRowing
         :parameters (?p - person ?s - rowingMachine)
-        :duration(= ?duration 300)
+        :duration(= ?duration 40)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
