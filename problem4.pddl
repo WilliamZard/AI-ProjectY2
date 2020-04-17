@@ -1,4 +1,4 @@
-(define (problem problem4) (:domain gym)
+(define (problem problem4) (:domain testDomain)
 (:objects 
         user - person 
         squat1 - squat
