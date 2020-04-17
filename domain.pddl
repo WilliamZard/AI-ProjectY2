@@ -11,7 +11,7 @@
     
     (:types
         person station - object
-        benchPress squat rowingMachine - station
+        legPress treadmill benchPress squat rowingMachine - station
         )
 
 
@@ -69,6 +69,34 @@
     (:durative-action useRowing
         :parameters (?p - person ?s - rowingMachine)
         :duration(= ?duration 20)
+        :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (at ?p ?s))
+                        (at start (> (stamina-level ?p) (stamina-required ?s)))
+                        (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
+                        (over all (> (stamina-level ?p) (stamina-required ?s))))
+        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
+                (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
+                (at end (increase (injury-level ?p) (injury-risk ?s))))
+    )
+
+    (:durative-action useTreadmil
+        :parameters (?p - person ?s - treadmill)
+        :duration(= ?duration 30)
+        :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (at ?p ?s))
+                        (at start (> (stamina-level ?p) (stamina-required ?s)))
+                        (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
+                        (over all (> (stamina-level ?p) (stamina-required ?s))))
+        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
+                (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
+                (at end (increase (injury-level ?p) (injury-risk ?s))))
+    )
+
+    (:durative-action useLegPress
+        :parameters (?p - person ?s - legPress)
+        :duration(= ?duration 5)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
