@@ -82,7 +82,11 @@
 
     (:durative-action useTreadmil
         :parameters (?p - person ?s - treadmill)
-        :duration(= ?duration 300)
+<<<<<<< HEAD
+        :duration(= ?duration 25)
+=======
+        :duration(= ?duration 25)
+>>>>>>> 2579659764abbcc939c42f856eb8bf1727ba1525
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))

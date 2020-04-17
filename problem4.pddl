@@ -1,4 +1,4 @@
-(define (problem problem3) (:domain gym)
+(define (problem problem4) (:domain gym)
 (:objects 
         user - person 
         squat1 - squat
@@ -41,7 +41,7 @@
         (=(calorie-ratio user) 1.5)
         (=(rest-gain user) 50)
         (=(rest-loss user) 0.5)
-        (=(calory-goal user) 300)
+        (=(calory-goal user) 120)
         (=(stamina-ceiling user) 100)
         (=(calorie-ratio-floor user) 0.5)
 )
@@ -49,6 +49,8 @@
 (:goal  (and (>= (calories-burnt user) (calory-goal user)))
 )
 
-(:metric minimize (total-time))
+(:metric minimize (+ (total-time) (calories-burnt user))) 
+;(:metric minimize (total-time))
+
 
 )
