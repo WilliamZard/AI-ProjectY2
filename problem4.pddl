@@ -50,6 +50,6 @@
 )
 
 (:metric minimize (total-time))
-(:metric maximize (calory-goal)) 
+(:metric minimize (calories-burnt user)) 
 
 )
