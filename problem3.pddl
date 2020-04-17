@@ -26,11 +26,11 @@
 
         (=(stamina-required benchPress1) 30)
         (=(injury-risk benchPress1) 5)
-        (=(activity-calories benchPress1) 10)
+        (=(activity-calories benchPress1) 5)
 
         (=(stamina-required squat1) 40)
         (=(injury-risk squat1) 10)
-        (=(activity-calories squat1) 15)
+        (=(activity-calories squat1) 5)
 
         (=(stamina-required rowingMachine1) 20)
         (=(injury-risk rowingMachine1) 10)
