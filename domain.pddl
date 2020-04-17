@@ -11,7 +11,7 @@
     
     (:types
         person station - object
-        benchPress squat - station
+        benchPress squat rowingMachine - station
         )
 
 
@@ -40,7 +40,7 @@
 
     (:durative-action useBenchPress
         :parameters (?p - person ?s - benchPress)
-        :duration(= ?duration 1)
+        :duration(= ?duration 5)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
@@ -54,7 +54,21 @@
 
     (:durative-action useSquat
         :parameters (?p - person ?s - squat)
-        :duration(= ?duration 2)
+        :duration(= ?duration 5)
+        :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
+                        (at start (at ?p ?s))
+                        (at start (> (stamina-level ?p) (stamina-required ?s)))
+                        (at end (> (stamina-level ?p) 0))
+                        (over all (at ?p ?s))
+                        (over all (> (stamina-level ?p) (stamina-required ?s))))
+        :effect (and (at end (decrease (stamina-level ?p) (stamina-required ?s))) 
+                (at end (increase (calories-burnt ?p) (activity-calories ?s))) 
+                (at end (increase (injury-level ?p) (injury-risk ?s))))
+    )
+
+    (:durative-action useRowing
+        :parameters (?p - person ?s - rowingMachine)
+        :duration(= ?duration 20)
         :condition (and (at start (< (+(injury-level ?p)(injury-risk ?s)) (injury-threshold ?p)))
                         (at start (at ?p ?s))
                         (at start (> (stamina-level ?p) (stamina-required ?s)))
