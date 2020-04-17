@@ -19,7 +19,7 @@
         
         (=(rest-gain user) 50)
         (=(rest-loss user) 0.5)
-        (=(calory-goal user) 30)
+        (=(calory-goal user) 60)
         (=(stamina-ceiling user) 100)
         (=(calorie-ratio-floor user) 0.5)
 )
