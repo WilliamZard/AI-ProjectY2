@@ -19,7 +19,7 @@
         (is-Station benchPress1)
         (is-Station squat1)
         (is-Station rowingMachine1)
-        
+
         (is-Person user)
         
         (=(stamina-level user) 100)
@@ -32,7 +32,7 @@
         (=(injury-risk squat1) 10)
         (=(activity-calories squat1) 15)
 
-        (=(stamina-required rowingMachine1) 50)
+        (=(stamina-required rowingMachine1) 20)
         (=(injury-risk rowingMachine1) 10)
         (=(activity-calories rowingMachine1) 35)
 
